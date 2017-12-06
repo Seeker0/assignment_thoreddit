@@ -7,7 +7,10 @@ let Commentable = require("./commentable");
 //import Commentable from './Commentable';
 
 var CommentSchema = new Schema(
-  {},
+  {
+    parentId: parent._id,
+    commentId: Array
+  },
   {
     discriminatorKey: "kind"
   }
