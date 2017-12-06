@@ -8,7 +8,7 @@ let Commentable = require("./commentable");
 
 var PostSchema = new Schema(
   {
-    commentId: Array
+    //commentId: Array
   },
   {
     discriminatorKey: "kind"

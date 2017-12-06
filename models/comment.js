@@ -8,8 +8,8 @@ let Commentable = require("./commentable");
 
 var CommentSchema = new Schema(
   {
-    parentId: parent._id,
-    commentId: Array
+    parentId: { type: Schema.Types.ObjectId, ref: "Commentable" }
+    childIds: [{type: Schema.Types.ObjectId, ref: "Commentable" }]
   },
   {
     discriminatorKey: "kind"
