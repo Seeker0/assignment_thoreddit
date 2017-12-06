@@ -5,7 +5,7 @@ let CommentableSchema = new Schema(
   {
     userName: String,
     title: String,
-    contnet: String
+    content: String
   },
   {
     timestamps: true,

@@ -1,1 +1,28 @@
-<h1>Hello Express!</h1>
+<header class="page-header">
+  <h1>Posts</h1>
+  <a href="/users/new" class="btn btn-primary">+ New Post</a>
+</header>
+
+
+{{#if posts.length }}
+<header class="page-header">
+  <h1>Posts</h1>
+  <a href="/posts/new" class="btn btn-primary">+ New Post</a>
+</header>
+
+
+
+  <table class="table">
+    <tbody>
+      {{#each posts as |post| }}
+        <tr>
+          <h3>{{post.title}}</h3>
+          <h5>{{post.userName}}</h5>
+          <p>{{post.content}}</p>
+        </tr>
+      {{/each }}
+    </tbody>
+  </table>
+{{else }}
+  <p class="text-danger">No posts</p>
+{{/if }}
