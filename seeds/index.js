@@ -47,8 +47,9 @@ mongooseeder.seed({
 
     for (let i = 0; i < 40; i++) {
       let user = users[i % users.length];
-      let post = posts[i % users.length];
-      if (i < 20) {
+      let post = posts[i % posts.length];
+      let comment = comments[i % 15];
+      if (i < 15) {
         const comment = new Comment({
           authorId: user._id,
           userName: user.userName,
@@ -60,7 +61,6 @@ mongooseeder.seed({
         post.childIds.push(comment._id);
         comments.push(comment);
       } else {
-        let comment = comments[i % users.length];
         const newComment = new Comment({
           authorId: user._id,
           userName: user.userName,

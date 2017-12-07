@@ -1,12 +1,15 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const mongoose = require("mongoose");
-const Post = mongoose.model("post");
+const mongoose = require('mongoose');
+const { Comment, Post } = mongoose.model('post');
 
-router.get("/getPostSupport", (req, res) => {
-  Post.find({})
-    .then(posts => {
-      res.render("welcome/index", { posts });
+router.get('/post/:id', (req, res) => {
+  Post.find({ _id: req.query.id })
+    .then(console.log(req.query.id))
+    .then(_lg('Post.find.populate'))
+    .populate('childIds')
+    .then(post => {
+      res.render('welcome/post', { post });
     })
     .catch(e => res.status(500).send(e.stack));
 });

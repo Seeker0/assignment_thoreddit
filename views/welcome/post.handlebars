@@ -1,0 +1,33 @@
+<header class="page-header">
+  <h1>{{post.title}}</h1>
+  <br>
+  <h2>{{post.userName}}</h2>
+  <br>
+  <p>{{post.content}}</p>
+</header>
+
+<a href="/users/new" class="btn btn-primary">+ New Comment</a>
+{{#if post.childIds.length }}
+  <table class="table">
+    <tbody>
+      {{#each post.childIds as |comment| }}
+        <tr>
+          <h5>{{comment.userName}}</h5>
+        </tr>
+        <tr>
+          <p>{{comment.content}}</p>
+        </tr>
+        {{#each comment.childIds as |comment| }}
+          <tr>
+            <h5>{{comment.userName}}</h5>
+          </tr>
+          <tr>
+            <p>{{comment.content}}</p>
+          </tr>
+        {{/each }}
+      {{/each }}
+    </tbody>
+  </table>
+{{else }}
+  <p class="text-danger">No posts</p>
+{{/if }}
