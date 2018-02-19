@@ -34,6 +34,7 @@
     "express-method-override-get-post-support": "^1.0.0",
     "load-helpers": "^1.0.1",
     "lodash": "^4.17.4",
+    "md5": "^2.2.1",
     "method-override": "^2.3.10",
     "mongoose": "^4.13.6",
     "mongooseeder": "^2.0.5",

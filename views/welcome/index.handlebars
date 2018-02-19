@@ -8,7 +8,7 @@
     <tbody>
       {{#each posts as |post| }}
         <tr>
-          <a href="/post/:{{post._id}}"><h3>{{post.title}}</h3></a>
+          <a href="/post/?id={{post._id}}"><h3>{{post.title}}</h3></a>
           <h5>{{post.userName}}</h5>
           <p>{{post.content}}</p>
         </tr>
